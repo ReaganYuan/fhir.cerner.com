@@ -9,7 +9,7 @@ title: Encounter | R4 API
 
 ## Overview
 
-Placeholder
+The Encounter resource provides admissions or visits during which health care services were provided to a patient. An encounter has a class to distinguish between different health care settings such as inpatient, outpatient, emergency, etc. A patient may have one medical record number with multiple encounter numbers per facility or organization. There is substantial variance between organizations in the definition of an encounter and what events are aggregated together to constitute an encounter.
 
 ## Search
 
@@ -97,3 +97,55 @@ The common [errors] and [OperationOutcomes] may be returned.
 [`_count`]: http://hl7.org/fhir/R4/search.html#count
 [errors]: ../../#client-errors
 [OperationOutcomes]: ../../#operation-outcomes
+
+## Patch
+
+Patch an existing encounter.
+
+    PATCH /Encounter/:id
+
+_Implementation Notes_
+
+* Only operations on the paths listed below are supported.
+
+### Authorization Types
+
+<%= authorization_types(practitioner: true, system: true) %>
+
+### Headers
+
+<%= headers head: {Authorization: '&lt;OAuth2 Bearer Token>', 'Accept': 'application/fhir+json',
+                   'Content-Type': 'application/json-patch+json', 'If-Match': 'W/"&lt;Current version of the Encounter resource>"'} %>
+
+### Patch Operations
+
+<%= patch_definition_table(:encounter_patch, :patch, :r4) %>
+
+### Example
+
+#### Request
+
+    PATCH https://fhir-ehr.sandboxcerner.com/r4/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Encounter/1621910
+
+#### Body
+
+<%= json(:r4_encounter_patch) %>
+
+#### Response
+
+<%= headers status: 200 %>
+<pre class="terminal">
+    Cache-Control: no-cache
+    Content-Length: 0
+    Content-Type: text/html
+    Date: Tue, 26 Mar 2019 15:42:29 GMT
+    Etag: W/"10"
+    Last-Modified: Tue, 26 Mar 2019 15:42:27 GMT
+    Server-Response-Time: 2260.237021
+    Status: 200 OK
+    Vary: Origin
+    X-Request-Id: 47306a14c8a2c3afd4ab85aa9594101d
+    X-Runtime: 2.260092
+</pre>
+
+The `ETag` response header indicates the current `If-Match` version to use on subsequent updates.

@@ -1,0 +1,21 @@
+---
+name: Encounter
+field_name_base_url: http://hl7.org/fhir/R4/encounter-definitions.html#Encounter
+operations:
+  - name: replace-period-start
+    path: /period/start
+    operation: replace
+    cardinality: 0..1
+    type: dateTime
+    url: http://hl7.org/fhir/datatypes-definitions.html#Period.start
+    description: Patch the encounter period start date time.
+    example: |
+      {
+        "context": {
+          "period" : {
+            "end": "2015-08-20T09:10:14Z"
+          }
+        }
+      }
+    note: >
+      Some note about `encounter.period.start`.

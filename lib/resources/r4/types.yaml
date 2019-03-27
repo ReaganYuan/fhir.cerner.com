@@ -1,0 +1,6 @@
+CodeableConcept: http://hl7.org/fhir/R4/datatypes.html#CodeableConcept
+dateTime: http://hl7.org/fhir/R4/datatypes.html#dateTime
+Encounter: http://hl7.org/fhir/R4/encounter.html
+id: http://hl7.org/fhir/R4/datatypes.html#id
+Period: http://hl7.org/fhir/R4/datatypes.html#Period
+string: http://hl7.org/fhir/R4/datatypes.html#string
