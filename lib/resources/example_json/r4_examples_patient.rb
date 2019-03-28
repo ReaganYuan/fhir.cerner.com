@@ -3,17 +3,49 @@ module Cerner
 
     R4_COMBINED_PATIENT_ENTRY ||= {
       "resourceType": "Patient",
-      "id": "4860007",
+      "id": "1011933",
       "meta": {
         "versionId": "0"
       },
+      "text": {
+        "status": "generated",
+        "div": "&lt;div&gt;&lt;p&gt;&lt;b&gt;Patient&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Status&lt;/b&gt;: Inactive&lt;/p&gt;&lt;/div&gt;"
+      },
+      "identifier": [
+          {
+          "extension": [
+              {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "unknown"
+            }
+          ]
+        }
+      ],
       "active": false,
+      "name": [
+          {
+          "extension": [
+              {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "unknown"
+            }
+          ]
+        }
+      ],
+      "_gender": {
+        "extension": [
+            {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          }
+        ]
+      },
       "link": [
-        {
+          {
           "other": {
-            "reference": "Patient/4342008"
+            "reference": "Patient/1011932"
           },
-          "type": "replace"
+          "type": "replaced-by"
         }
       ]
     }
